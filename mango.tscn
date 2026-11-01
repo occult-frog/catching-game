@@ -7,9 +7,9 @@ radius = 23.021729
 
 [node name="Mango" type="Area2D" unique_id=1696073987 groups=["mango"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496885534 groups=["mango"]]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496885534]
 scale = Vector2(0.17222223, 0.17222223)
 texture = ExtResource("1_usami")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232004117 groups=["mango"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232004117]
 shape = SubResource("CircleShape2D_h2yge")
