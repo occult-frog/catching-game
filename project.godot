@@ -15,6 +15,11 @@ run/main_scene="uid://dfakwjqtnn67u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1400
+window/size/viewport_height=1000
+
 [global_group]
 
 mango=""

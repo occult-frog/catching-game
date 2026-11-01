@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfakwjqtnn67u"]
 
 [ext_resource type="Script" uid="uid://dfjutf6wea8nf" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c3qpgne4mp4s" path="res://background.png" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dtthpxipku8x1" path="res://parrot.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://c01wc3v770puy" path="res://mango.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6lwhrgt5a5hu" path="res://mango.tscn" id="4_1bvp3"]
@@ -14,6 +15,11 @@ size = Vector2(129, 117)
 
 [node name="Node2D" type="Node2D" unique_id=1419459519 groups=["mango"]]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314095806]
+position = Vector2(700, 500.25)
+scale = Vector2(0.990099, 1.0005006)
+texture = ExtResource("1_7mycd")
+
 [node name="Basket" type="Area2D" parent="." unique_id=1430893228 groups=["basket"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket" unique_id=363657500]
@@ -26,16 +32,18 @@ position = Vector2(1023, 327)
 shape = SubResource("CircleShape2D_7mycd")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=174526097]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=446833123]
+position = Vector2(78.99999, 70.99999)
 scale = Vector2(0.4906826, 0.4906826)
 texture = ExtResource("1_ig7tw")
 
 [node name="PickupArea" type="Area2D" parent="Player" unique_id=962410067]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupArea" unique_id=1350443936]
-position = Vector2(-0.5, 1.5)
+position = Vector2(79, 71)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="HeldMango" type="Sprite2D" parent="Player" unique_id=582108179]
@@ -56,14 +64,18 @@ text = "mangoes: 0"
 
 [node name="Mango" parent="." unique_id=1696073987 instance=ExtResource("4_1bvp3")]
 position = Vector2(424, 104)
+scale = Vector2(2, 2)
 
 [node name="Mango2" parent="." unique_id=937096122 instance=ExtResource("4_1bvp3")]
 position = Vector2(155, 529)
+scale = Vector2(2, 2)
 
 [node name="Mango3" parent="." unique_id=1306478192 instance=ExtResource("4_1bvp3")]
 position = Vector2(815, 144)
+scale = Vector2(2, 2)
 
 [node name="Mango4" parent="." unique_id=1042297130 instance=ExtResource("4_1bvp3")]
 position = Vector2(757, 484)
+scale = Vector2(2, 2)
 
 [connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
