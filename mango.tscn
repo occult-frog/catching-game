@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b6lwhrgt5a5hu"]
+
+[ext_resource type="Texture2D" uid="uid://c01wc3v770puy" path="res://mango.png" id="1_usami"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 23.021729
+
+[node name="Mango" type="Area2D" unique_id=1696073987 groups=["mango"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496885534 groups=["mango"]]
+scale = Vector2(0.17222223, 0.17222223)
+texture = ExtResource("1_usami")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232004117 groups=["mango"]]
+shape = SubResource("CircleShape2D_h2yge")
