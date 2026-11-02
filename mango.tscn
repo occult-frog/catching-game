@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b6lwhrgt5a5hu"]
 
+[ext_resource type="Script" uid="uid://bo8guo7pcyfy0" path="res://mango.gd" id="1_8is0g"]
 [ext_resource type="Texture2D" uid="uid://c01wc3v770puy" path="res://mango.png" id="1_usami"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
 radius = 23.021729
 
 [node name="Mango" type="Area2D" unique_id=1696073987 groups=["mango"]]
+script = ExtResource("1_8is0g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496885534]
 scale = Vector2(0.17222223, 0.17222223)
@@ -13,3 +15,8 @@ texture = ExtResource("1_usami")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232004117]
 shape = SubResource("CircleShape2D_h2yge")
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=547913881]
+wait_time = 5.0
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

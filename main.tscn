@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c01wc3v770puy" path="res://mango.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6lwhrgt5a5hu" path="res://mango.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dgdapoooiyccb" path="res://basket.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://d1s6w34ryba04" path="res://running-icon-free-vector.jpg" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cs8xc2qae7ffh" path="res://incease_speed.gd" id="8_5vw27"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
-radius = 57.0
+radius = 75.35211
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(129, 117)
@@ -21,14 +23,15 @@ scale = Vector2(0.990099, 1.0005006)
 texture = ExtResource("1_7mycd")
 
 [node name="Basket" type="Area2D" parent="." unique_id=1430893228 groups=["basket"]]
+scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket" unique_id=363657500]
-position = Vector2(1023.9999, 325)
-scale = Vector2(0.283445, 0.28344494)
+position = Vector2(475.8333, 560.83325)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_lquwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket" unique_id=664850456]
-position = Vector2(1023, 327)
+position = Vector2(474.99997, 562.5)
 shape = SubResource("CircleShape2D_7mycd")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=174526097]
@@ -55,27 +58,63 @@ texture = ExtResource("3_h2yge")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=477836809]
 
 [node name="MangoCountDisplay" type="Label" parent="Player/CanvasLayer" unique_id=288710375]
-offset_left = 889.0
+offset_left = 1011.0
 offset_top = 11.0
-offset_right = 1147.0
+offset_right = 1269.0
 offset_bottom = 53.0
 theme_override_font_sizes/font_size = 30
 text = "mangoes: 0"
 
+[node name="SpeedDisplay" type="Label" parent="Player/CanvasLayer" unique_id=1160805958]
+offset_left = 1011.0
+offset_top = 58.0
+offset_right = 1364.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "speed: 400"
+
 [node name="Mango" parent="." unique_id=1696073987 instance=ExtResource("4_1bvp3")]
-position = Vector2(424, 104)
+position = Vector2(904, 92)
 scale = Vector2(2, 2)
 
-[node name="Mango2" parent="." unique_id=937096122 instance=ExtResource("4_1bvp3")]
-position = Vector2(155, 529)
+[node name="Mango2" parent="." unique_id=772496269 instance=ExtResource("4_1bvp3")]
+position = Vector2(933, 842)
 scale = Vector2(2, 2)
 
-[node name="Mango3" parent="." unique_id=1306478192 instance=ExtResource("4_1bvp3")]
-position = Vector2(815, 144)
+[node name="Mango3" parent="." unique_id=1352775473 instance=ExtResource("4_1bvp3")]
+position = Vector2(986, 367)
 scale = Vector2(2, 2)
 
-[node name="Mango4" parent="." unique_id=1042297130 instance=ExtResource("4_1bvp3")]
-position = Vector2(757, 484)
+[node name="Mango4" parent="." unique_id=1039052645 instance=ExtResource("4_1bvp3")]
+position = Vector2(199, 891)
 scale = Vector2(2, 2)
+
+[node name="Mango5" parent="." unique_id=722738575 instance=ExtResource("4_1bvp3")]
+position = Vector2(111, 455)
+scale = Vector2(2, 2)
+
+[node name="Mango6" parent="." unique_id=1648664043 instance=ExtResource("4_1bvp3")]
+position = Vector2(1251, 868)
+scale = Vector2(2, 2)
+
+[node name="Mango7" parent="." unique_id=321193156 instance=ExtResource("4_1bvp3")]
+position = Vector2(1236, 535)
+scale = Vector2(2, 2)
+
+[node name="Mango8" parent="." unique_id=787124886 instance=ExtResource("4_1bvp3")]
+position = Vector2(537, 233)
+scale = Vector2(2, 2)
+
+[node name="InceaseSpeed" type="Button" parent="." unique_id=1156896107]
+offset_left = 1011.0
+offset_top = 116.0
+offset_right = 1282.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 24
+text = "Increase Speed
+(5 mangoes)"
+icon = ExtResource("7_272bh")
+expand_icon = true
+script = ExtResource("8_5vw27")
 
 [connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
