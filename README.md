@@ -10,3 +10,5 @@ How to play:
 1. Touch the basket to put the mangoes in them.
 1. The mangoes respawn after 5 seconds.
 1. You can only hold 1 mango at a time.
+
+No AI was used. Tutorial used: https://www.figma.com/deck/OF7qJyZ1v7CMgvjFWW8vUE/Haven-Godot-Workshop
